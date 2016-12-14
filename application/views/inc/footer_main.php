@@ -15,8 +15,8 @@
             </div>
             <div class="col-md-4 col-sm-6">
                 <address>
-                    <p><a href="mailto:"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: info@ahninternational.lk</a></p>
-                    <p><a href="#"><i class="fa fa-globe" aria-hidden="true"></i>www.ahninternational.lk</a></p>
+                    <p><a href="mailto:info@ahninternational.lk"><i class="fa fa-envelope-o" aria-hidden="true"></i>Email: info@ahninternational.lk</a></p>
+                    <p><a href="http://www.ahninternational.lk" target="_self"><i class="fa fa-globe" aria-hidden="true"></i>www.ahninternational.lk</a></p>
                 </address>
             </div>
 

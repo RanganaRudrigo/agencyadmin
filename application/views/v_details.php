@@ -122,6 +122,7 @@
                                 <div style="">
 
                                     <a href="#" class="btn btn-dark btn-circled btn-sm">Apply Now</a>
+<!--                                    <a href="#" class="btn btn-default">Apply Now</a>-->
                                 </div>
 
                             </div>

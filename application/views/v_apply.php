@@ -36,14 +36,8 @@
             <div class="container">
                 <div class="section-content">
                     <div class="row mt-50">
-                        <div class="col-md-5">
-                            <div class="class-item1">
-                                <div class="thumb"> <a href="#">
-                                        <img class="img-responsive img-fullwidth mb-20" src="http://placehold.it/450x450" alt="..."></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-7 mt-20">
+
+                        <div class="col-md-12 mt-20">
                             <div class="caption"> <span class="text-uppercase letter-space-4 mb-10 text-theme-colored">Best Services We Provided </span>
                                 <h3 class="text-uppercase text-theme-colored font-weight-600 letter-space-2 mt-5">Whell Alignment</h3>
                                 <p> Quam distinctio quis perspiciatis facere accusamus perferendis eligendi odit cum nemo fugit, tenetur sequi expedita earum nobis optio tempora id repellendus? Tempora illo ad, magni iusto quas, rerum debitis id et nisi eius quod dolor eos repudiandae perferendis, consequuntur illum alias. Molestiae provident voluptate corporis quae numquam eos earum porro quia officia, maiores magni accusantium iusto similique tempora.</p>
@@ -54,7 +48,7 @@
                     <div class="row mt-30 text-justify">
                         <div class="col-md-12">
                             <div class="heading-line-bottom">
-                                <h4 class="heading-title">Send us, Your request</h4>
+                                <h4 class="heading-title">Upload Your Details</h4>
                             </div>
                             <form action="#">
                                 <div class="row">
@@ -89,7 +83,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Register Now</button>
+                                    <input type="submit" value="Register Now" class="btn btn-dark"/>
                                 </div>
                             </form>
                         </div>

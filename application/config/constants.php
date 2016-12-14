@@ -85,8 +85,8 @@ defined('EXIT__AUTO_MIN') OR define('EXIT__AUTO_MIN', 9); // lowest automaticall
 defined('EXIT__AUTO_MAX') OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 
-define("TITLE", "Agency Admin");
-define("title", "Agency Admin");
+define("TITLE", "AHN International Services");
+define("title", "AHN International");
 define("email", "ranga@itmartx.net");
 
 

@@ -153,6 +153,18 @@ class Home extends Front_Controller
     {
         $this->view('services');
     }
+    public function ourclients()
+    {
+        $this->view('client');
+    }
+    public function databank()
+    {
+        $this->view('databank');
+    }
+    public function foreign_principals()
+    {
+        $this->view('principals');
+    }
 
     function static_page($page)
     {

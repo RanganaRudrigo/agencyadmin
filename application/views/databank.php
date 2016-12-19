@@ -35,6 +35,10 @@
             <div class="container pt-70 pb-40">
                 <div class="section-content">
                     <div class="row">
+                        <?php
+                        foreach ($datas as $k => $row):
+                        ?>
+
                         <div class="col-sm-6 col-md-3">
                             <article class="post clearfix mb-30 bg-lighter">
 
@@ -42,81 +46,21 @@
                                     <div class="entry-meta media no-bg no-border mt-0 mb-10">
                                         <div class="media-body pl-0">
                                             <div class="event-content pull-left flip">
-                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#">Post title here</a></h4>
+                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#"><?= $row->BankTitle ?></a></h4>
 
                                             </div>
                                         </div>
                                     </div>
                                     <p class="mt-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis deleniti
-                                        <a class="text-theme-color-2 font-12 ml-5" href="#"> View Details</a></p>
+                                        <?= $row->ShortDescription; ?>
+                                        <br/>
+                                        <a class="text-theme-color-2 font-12 ml-5" href="<?= base_url('Contact-Us') ?>"> Contact</a></p>
                                 </div>
                             </article>
                         </div>
-                        <div class="col-sm-6 col-md-3">
-                            <article class="post clearfix mb-30 bg-lighter">
+                        <?php endforeach; ?>
 
-                                <div class="entry-content p-15 pt-10 pb-10">
-                                    <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                        <div class="media-body pl-0">
-                                            <div class="event-content pull-left flip">
-                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#">Post title here</a></h4>
 
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis deleniti
-                                        <a class="text-theme-color-2 font-12 ml-5" href="#"> View Details</a></p>
-                                </div>
-                            </article>
-                        </div><div class="col-sm-6 col-md-3">
-                            <article class="post clearfix mb-30 bg-lighter">
-
-                                <div class="entry-content p-15 pt-10 pb-10">
-                                    <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                        <div class="media-body pl-0">
-                                            <div class="event-content pull-left flip">
-                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#">Post title here</a></h4>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis deleniti
-                                        <a class="text-theme-color-2 font-12 ml-5" href="#"> View Details</a></p>
-                                </div>
-                            </article>
-                        </div><div class="col-sm-6 col-md-3">
-                            <article class="post clearfix mb-30 bg-lighter">
-
-                                <div class="entry-content p-15 pt-10 pb-10">
-                                    <div class="entry-meta media no-bg no-border mt-0 mb-10">
-                                        <div class="media-body pl-0">
-                                            <div class="event-content pull-left flip">
-                                                <h4 class="entry-title text-white text-uppercase font-weight-600 m-0 mt-5"><a href="#">Post title here</a></h4>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p class="mt-5">
-                                        Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis delenitiLorem ipsum dolor sit amet, consectetur adipisi cing elit. Molestias eius illum libero
-                                        dolor nobis deleniti
-                                        <a class="text-theme-color-2 font-12 ml-5" href="#"> View Details</a></p>
-                                </div>
-                            </article>
-                        </div>
                     </div>
                 </div>
             </div>

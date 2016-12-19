@@ -8,7 +8,7 @@ class Home extends Front_Controller
 
         $this->load->model('Vacancy_model', 'vacancy');
         $this->load->model('Country_model', 'country');
-        $this->load->model('Country_model', 'country');
+        $this->load->model('Data_bank_model', 'data');
 
         $this->Food = [
             ['index'=>'1', 'value'=> "Allowance"],
@@ -36,8 +36,7 @@ class Home extends Front_Controller
         $this->load->model('News_model', 'news');
         $this->load->model('Blog_model', 'blog');
 
-        $this->load->model('Vacancy_model', 'vacancy');
-        $this->load->model('Country_model', 'country');
+
 
 
 //
@@ -193,7 +192,8 @@ class Home extends Front_Controller
     }
     public function databank()
     {
-        $this->view('databank');
+        $d['datas'] = $this->data->order_by('Order','ASC')->get_all();
+        $this->view('databank',$d);
     }
     public function foreign_principals()
     {

@@ -19,11 +19,11 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="page-title-box">
-                        <h4 class="page-title">Event Re-arrange</h4>
+                        <h4 class="page-title">Data Bank Re-arrange</h4>
                         <ol class="breadcrumb p-0">
                             <li><a href="<?= base_url('admin') ?>">Dashboard</a></li>
-                            <li><a href="<?= base_url('admin/events') ?>"> Event</a></li>
-                            <li class="active"> Event Re-arrange</li>
+                            <li><a href="<?= base_url('admin/databank') ?>"> Data Bank</a></li>
+                            <li class="active"> Data Bank Re-arrange</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -34,12 +34,12 @@
                 <div class="col-sm-12">
 
                     <div class="card-box">
-                        <h4 class="header-title m-t-0 m-b-30">Event Re-arrange</h4>
+                        <h4 class="header-title m-t-0 m-b-30">Data Bank Re-arrange</h4>
 
                         <p id="status"></p>
 
-                        <input type="hidden" id="view" value="events"/>
-                        <input type="hidden" id="id" value="EventId"/>
+                        <input type="hidden" id="view" value="databank"/>
+                        <input type="hidden" id="id" value="BankId"/>
                         <input type="hidden" id="action" value="<?= base_url('admin/reorder/do_update') ?>"/>
 
                         <div class="row" id="sortable">
@@ -49,11 +49,11 @@
                                     ?>
 
                                     <div class="col-lg-12 col-sm-12 col-xs-12 col-md-12 col-xl-4"
-                                         id="conid_<?= $row->EventId ?>">
+                                         id="conid_<?= $row->BankId ?>">
 
                                         <div class="alert alerts-demo" role="alert" style="cursor: move">
                                             <strong> Order :</strong><?= $row->Order ?><br/>
-                                            <strong> Event Title :</strong><?= $row->EventTitle ?><br/>
+                                            <strong> Event Title :</strong><?= $row->BankTitle ?><br/>
                                         </div>
 
                                     </div>

@@ -3,14 +3,42 @@
 class Home extends Front_Controller
 {
 
+    function __construct(){
+        parent::__construct();
+
+        $this->load->model('Vacancy_model', 'vacancy');
+        $this->load->model('Country_model', 'country');
+
+        $this->Food = [
+            ['index'=>'1', 'value'=> "Allowance"],
+            ['index'=>'2', 'value'=> "Provided"],
+            ['index'=>'3', 'value'=> "Not Provided"],
+            ['index'=>'4', 'value'=> "Free"],
+            ['index'=>'5', 'value'=> "----"]
+        ];
+        $this->Accommodation = [
+            ['index'=>'1', 'value'=> "Allowance"],
+            ['index'=>'2', 'value'=> "Provided"],
+            ['index'=>'3', 'value'=> "Not Provided"],
+            ['index'=>'4', 'value'=> "Free"],
+            ['index'=>'5', 'value'=> "----"]
+        ];
+    }
+
     function index()
     {
+
 
         $this->load->model('slider_model', 'slider');
         $this->load->model('Project_model', 'project');
         $this->load->model('Sri_lanka_News_model', 'slnews');
         $this->load->model('News_model', 'news');
         $this->load->model('Blog_model', 'blog');
+
+        $this->load->model('Vacancy_model', 'vacancy');
+        $this->load->model('Country_model', 'country');
+
+
 //
         $d['sliders'] = $this->slider->order_by('Order', 'ASC')->get_all();
         $d['projects'] = $this->project->order_by("Order", "ASC")->limit(4)->get_all();
@@ -32,6 +60,9 @@ class Home extends Front_Controller
 //
 //        $this->load->model('gallery_model','gallery');
 //        $d['galleries'] = $this->gallery->limit(12)->order_by('GalleryId','desc')->get_all();
+
+        $d['foods'] = $this->Food;
+        $d['accommodations'] = $this->Accommodation;
 
         $d['vacancies'] = $this->vacancy->join('country')
             ->fields("{$this->vacancy->table()}.* , country.CountryId,CountryTitle,Image ")->limit(13)->order_by("Order", "ASC")

@@ -610,123 +610,26 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($vacancies as $k => $vacancies_list): ?>
                                 <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-1.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
+                                    <th scope="row"><?= $vacancies_list->CountryTitle; ?> </th>
+                                    <td><img src="<?= UP.$vacancies_list->Image ?>" width="55" height="30">  <?= $vacancies_list->CountryTitle; ?></td>
+                                    <td><?= $vacancies_list->Salary; ?></td>
+                                    <td>
+                                        <?php foreach ($foods as $food): $food = (object)$food; ?>
+                                            <?= ($vacancies_list->Food == $food->index) ? $food->value : ""; ?>
+                                        <?php endforeach; ?>
+                                    </td>
+                                    <td>
+                                        <?php foreach ($accommodations as $accommodation): $accommodation = (object)$accommodation; ?>
+                                            <?= ($vacancies_list->Accommodation == $accommodation->index) ? $accommodation->value : ""; ?>
+                                        <?php endforeach; ?>
+                                    </td>
+                                    <td style=" text-align:center;"><a href="<?= base_url('Vacancy-Details/').url_title($vacancies_list->VacancyTitle).'/'.$vacancies_list->VacancyId ?>" class="btn btn-default"> Read More</a></td>
 
                                 </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-2.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
+                                <?php endforeach; ?>
 
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-3.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-1.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-3.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-2.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-3.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-2.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-1.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-3.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-1.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-2.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
-                                <tr>
-                                    <th scope="row">HOUSEKEEPING SUPERVISOR</th>
-                                    <td><img src="<?= base_url('media/images/') ?>flag-3.jpg" width="55" height="30"> Qatar</td>
-                                    <td>1500 QR</td>
-                                    <td>Provided</td>
-                                    <td>Provided</td>
-                                    <td style=" text-align:center;"><a href="" class="btn btn-default"> Read More</a></td>
-
-                                </tr>
                                 </tbody>
                             </table>
                             <a href="">View all Vacancies</a>

@@ -35,6 +35,18 @@
                     </ul>
                 </li>
 
+                <li class="has_sub" style="display: ">
+                    <a href="#" class="waves-effect">
+                        <i class="fa fa-anchor"></i>
+                        <span> Data Bank </span> <span
+                            class="menu-arrow"></span> </a>
+                    <ul style="">
+                        <li><a href="<?= base_url('admin/databank/create') ?>"><span>Create</span></a></li>
+                        <li><a href="<?= base_url('admin/databank/') ?>"><span>Manage</span></a></li>
+                        <li><a href="<?= base_url('admin/databank/rearrange') ?>"><span>Data Bank Re-arrange</span></a></li>
+                    </ul>
+                </li>
+
 
 
 

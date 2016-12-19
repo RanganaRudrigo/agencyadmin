@@ -53,24 +53,33 @@
                     </div>
                     <div class="row mt-30 text-justify">
                         <div class="col-md-12">
+                            <?php
+                            $notification = $this->session->flashdata('notification');
+                            if (isset($notification)) { ?>
+                                <div class="alert alert-<?= $notification['alert'] ?> alert-dismissable">
+                                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> * </button>
+                                    <?= $notification['text'] ?>
+                                </div>
+                            <?php } ?>
                             <div class="heading-line-bottom">
                                 <h4 class="heading-title">Send us, Your request</h4>
                             </div>
-                            <form action="#">
+                            <form action="" method="post">
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[Name]">
+                                        <p class="error"><?= form_error('form[Name]') ?></p>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Address</label>
-                                        <input class="form-control" type="email">
+                                        <input class="form-control" type="email" name="form[Address]">
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Country</label>
-                                        <select name="Country" id="country" class="form-control">
+                                        <select name="form[Country]" id="country" class="form-control">
                                             <option selected="selected" value="">Select your country </option>
                                             <option value="Africa">Africa</option>
                                             <option value="Algeria">Algeria</option>
@@ -291,27 +300,29 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Telephone</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[Telephone]">
+                                        <p class="error"> <?= form_error('form[Telephone]') ?> </p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Fax</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[Fax]">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Email</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="from[Email]">
+                                        <p class="error"> <?= form_error('form[Email]') ?> </p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Nature of Business</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[Business]">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Gender</label>
-                                        <select name="gender" class="form-control">
+                                        <select name="form[Gender]" class="form-control" >
                                             <option selected="">Select Gender</option>
                                             <option>Male</option>
                                             <option>Female</option>
@@ -322,7 +333,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Job Category</label>
-                                        <select name="category" id="category" class="form-control">
+                                        <select name="from[Category]" id="category" class="form-control">
                                             <option selected="selected" value="">Select your job Category </option>
                                             <option value="Accountant">Accountant  </option>
                                             <option value="Administrator">Administrator </option>
@@ -385,7 +396,7 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Age</label>
-                                        <select name="age" class="form-control" id="age">
+                                        <select name="form[Age]" class="form-control" id="age">
                                             <option selected="selected" value="">Select your Age </option>
                                             <option value="18-20">18-20</option>
                                             <option value="21-25">21-25 </option>
@@ -400,11 +411,11 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Quantity</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[Quantity]">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Religion</label>
-                                        <select name="religion" class="form-control">
+                                        <select name="form[Religion]" class="form-control">
                                             <option selected="">Select Religion</option>
                                             <option>Muslim</option>
                                             <option>Non Muslim</option>
@@ -414,7 +425,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Experience</label>
-                                        <select name="experience" class="form-control" id="experience" style="margin-bottom: 7px;">
+                                        <select name="form[Experience]" class="form-control" id="experience" style="margin-bottom: 7px;">
                                             <option selected="selected" value="">Select your Experience</option>
                                             <option value="None">None </option>
                                             <option value="Local Experience">Local Experience</option>
@@ -423,14 +434,14 @@
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Salary</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="from[Salary]">
                                     </div>
                                 </div>
 
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Contract Period</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="from[Period]">
                                     </div>
 
                                 </div>
@@ -438,12 +449,12 @@
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Remarks</label>
-                                        <textarea class="form-control" type="text"></textarea>
+                                        <textarea class="form-control" type="text" name="from[Remarks]"></textarea>
                                     </div>
 
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="btn btn-default">Register Now</button>
+                                    <input type="submit" value="Register Now" class="btn btn-default"/>
                                 </div>
                             </form>
                         </div>

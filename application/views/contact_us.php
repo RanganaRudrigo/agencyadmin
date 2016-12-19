@@ -67,20 +67,22 @@
                         </div>
                     </div>
                     <div class="col-md-8">
+                        <?= @$message; ?>
                         <h3 class="line-bottom mt-0 mb-20">Interested in discussing?</h3>
                         <p class="mb-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error optio in quia ipsum quae neque alias eligendi, nulla nisi. Veniam ut quis similique culpa natus dolor aliquam officiis ratione libero. Expedita asperiores aliquam provident amet dolores.</p>
                         <!-- Contact Form -->
-                        <form id="contact_form" name="contact_form" class="" action="includes/sendmail.php" method="post">
+                        <form id="contact_form1" name="contact_form" class="" action="" method="post">
 
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+
+                                        <input name="form_name" class="form-control" type="text" placeholder="Enter Name" value="<?= set_value('form_name') ?>">
                                     </div>
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="form-group">
-                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email">
+                                        <input name="form_email" class="form-control required email" type="email" placeholder="Enter Email" value="<?= set_value('form_email') ?>">
                                     </div>
                                 </div>
                             </div>
@@ -88,18 +90,18 @@
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject">
+                                        <input name="form_subject" class="form-control required" type="text" placeholder="Enter Subject" value="<?= set_value('form_subject') ?>" >
                                     </div>
                                 </div>
                                 <div class="col-sm-6">
                                     <div class="form-group">
-                                        <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                                        <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone" value="<?= set_value('form_phone') ?>">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
-                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"></textarea>
+                                <textarea name="form_message" class="form-control required" rows="5" placeholder="Enter Message"><?= set_value('form_message') ?></textarea>
                             </div>
                             <div class="form-group">
                                 <input name="form_botcheck" class="form-control" type="hidden" value="" />

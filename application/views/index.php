@@ -632,7 +632,7 @@
 
                                 </tbody>
                             </table>
-                            <a href="">View all Vacancies</a>
+                            <a href="<?= base_url('Vacancies') ?>">View all Vacancies</a>
                         </div>
 
                     </div>

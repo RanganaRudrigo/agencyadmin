@@ -8,6 +8,7 @@ class Home extends Front_Controller
 
         $this->load->model('Vacancy_model', 'vacancy');
         $this->load->model('Country_model', 'country');
+        $this->load->model('Country_model', 'country');
 
         $this->Food = [
             ['index'=>'1', 'value'=> "Allowance"],
@@ -134,26 +135,26 @@ class Home extends Front_Controller
 
         if ($this->input->post()) {
 
-            $this->form_validation->set_rules('name', 'Name', 'required');
-            $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
-            $this->form_validation->set_rules('comment', 'Comment', 'required');
-            $this->form_validation->set_rules('telephone', 'Telephone', 'numeric');
+            $this->form_validation->set_rules('form_name', 'Name', 'required');
+            $this->form_validation->set_rules('form_email', 'Email', 'required|valid_email');
+            $this->form_validation->set_rules('form_message', 'Message', 'required');
+            $this->form_validation->set_rules('form_phone', 'Phone', 'numeric');
             if ($this->form_validation->run()) {
 //                p('02');
                 $this->load->library('email');
                 $config['mailtype'] = 'html';
                 $this->email->initialize($config);
                 $this->email->to(email);
-                $this->email->from($this->input->post('email'), $this->input->post('name'));
+                $this->email->from($this->input->post('form_email'), $this->input->post('form_name'));
                 $this->email->subject(TITLE . " - Contact Us Form");
                 $msg = '<html><body>';
                 $msg .= '<img src="' . base_url() . 'media/images/logo.jpg" alt="' . TITLE . '" />';
                 $msg .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
-                $msg .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('name')) . "</td></tr>";
-                $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('email')) . "</td></tr>";
-                $msg .= "<tr><td><strong>Subject:</strong> </td><td>" . strip_tags($this->input->post('subject')) . "</td></tr>";
-                $msg .= "<tr><td><strong>Telephone:</strong> </td><td>" . strip_tags($this->input->post('phone')) . "</td></tr>";
-                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('comment')) . "</td></tr>";
+                $msg .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('form_name')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('form_email')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Subject:</strong> </td><td>" . strip_tags($this->input->post('form_subject')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Telephone:</strong> </td><td>" . strip_tags($this->input->post('form_phone')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Comment:</strong> </td><td>" . strip_tags($this->input->post('form_message')) . "</td></tr>";
                 $msg .= "</table>";
                 $msg .= "</body></html>";
 
@@ -163,11 +164,11 @@ class Home extends Front_Controller
 
                 $this->view('contact_us', $d);
             } else {
-                $d['name'] = $this->input->post('name');
-                $d['email'] = $this->input->post('email');
-                $d['subject'] = $this->input->post('subject');
-                $d['phone'] = $this->input->post('phone');
-                $d['comment'] = $this->input->post('comment');
+                $d['name'] = $this->input->post('form_name');
+                $d['email'] = $this->input->post('form_email');
+                $d['subject'] = $this->input->post('form_subject');
+                $d['phone'] = $this->input->post('form_phone');
+                $d['comment'] = $this->input->post('form_message');
 
                 $d['message'] = "<div class='alert alert-danger'>Validation errors occurred. Please confirm the fields and submit it again.</div>";
                 $this->view('contact_us', $d);
@@ -196,7 +197,61 @@ class Home extends Front_Controller
     }
     public function foreign_principals()
     {
-        $this->view('principals');
+        $d['meaage'] = "";
+
+        if ($this->input->post()) {
+
+            $this->form_validation->set_rules('from[Name]', 'Name', 'required');
+            $this->form_validation->set_rules('from[Email]', 'Email', 'required|valid_email');
+//            $this->form_validation->set_rules('form_message', 'Message', 'required');
+            $this->form_validation->set_rules('form[Telephone]', 'Telephone', 'numeric');
+            if ($this->form_validation->run()) {
+                $this->load->library('email');
+                $config['mailtype'] = 'html';
+                $this->email->initialize($config);
+                $this->email->to(email);
+                $this->email->from($this->input->post('from[Email]'), $this->input->post('from[Name]'));
+                $this->email->subject(TITLE . " - Foreign Principals Form");
+                $msg = '<html><body>';
+                $msg .= '<img src="' . base_url() . 'media/images/logo.jpg" alt="' . TITLE . '" />';
+                $msg .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+                $msg .= "<tr><td><strong>Name:</strong> </td><td>" . strip_tags($this->input->post('form[Name]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Address:</strong> </td><td>" . strip_tags($this->input->post('form[Address]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Country:</strong> </td><td>" . strip_tags($this->input->post('form[Country]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Telephone:</strong> </td><td>" . strip_tags($this->input->post('form[Telephone]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Fax:</strong> </td><td>" . strip_tags($this->input->post('form[Fax]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($this->input->post('form[Email]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Nature of Business:</strong> </td><td>" . strip_tags($this->input->post('form[Business]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Gender:</strong> </td><td>" . strip_tags($this->input->post('form[Gender]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Job Category:</strong> </td><td>" . strip_tags($this->input->post('form[Category]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Age:</strong> </td><td>" . strip_tags($this->input->post('form[Age]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Quantity:</strong> </td><td>" . strip_tags($this->input->post('form[Quantity]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Religion:</strong> </td><td>" . strip_tags($this->input->post('form[Religion]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Experience:</strong> </td><td>" . strip_tags($this->input->post('form[Experience]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Salary:</strong> </td><td>" . strip_tags($this->input->post('form[Salary]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Contract Period:</strong> </td><td>" . strip_tags($this->input->post('form[Period]')) . "</td></tr>";
+                $msg .= "<tr><td><strong>Remarks:</strong> </td><td>" . strip_tags($this->input->post('form[Remarks]')) . "</td></tr>";
+                $msg .= "</table>";
+                $msg .= "</body></html>";
+
+                $this->email->message($msg);
+                $this->email->send();
+
+                $this->session->set_flashdata('notification', ["alert" => "success", "text" => '<strong> Your message was sent successfully. Thanks. '  . '</strong>']);
+
+//                $d['message'] = '<div class="alert alert-success alert-dismissable"><button aria-hidden="true" data-dismiss="alert" class="close" type="button"> * </button>Your message was sent successfully. Thanks.</div>';
+//                $this->view('principals', $d);
+                redirect(current_url());
+            } else {
+                $this->session->set_flashdata('notification', ["alert" => "danger", "text" => '<strong> ' .  ' Error ! Validation errors occurred. Please confirm the fields and submit it again.</strong>']);
+//                $d['message'] = '<div class="alert alert-danger alert-dismissable"><button aria-hidden="true" data-dismiss="alert" class="close" type="button"> * </button>Validation errors occurred. Please confirm the fields and submit it again.</div>';
+//                $this->view('principals', $d);
+                redirect(current_url());
+            }
+        }
+
+
+        $this->view('principals', $d);
     }
 
     function static_page($page)

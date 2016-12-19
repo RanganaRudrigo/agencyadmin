@@ -99,9 +99,9 @@ if (@end(explode('.', $_SERVER['SERVER_NAME'])) == 'dev') {
 } else {
 
     define('HOST', 'mysql1118.ixwebhosting.com');
-    define('DB', 'C343720_humanrigdb');
-    define('USERNAME', 'C343720_humanrigdb');
-    define('PASSWORD', 'db47SaS47wet');
+    define('DB', 'C343720_ahnnewbd');
+    define('USERNAME', 'C343720_ahnnewbd');
+    define('PASSWORD', 'a1V8D15SDE7');
 }
 
 define('DOMAIN', "http://{$_SERVER['SERVER_NAME']}");

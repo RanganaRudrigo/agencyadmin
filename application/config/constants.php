@@ -107,3 +107,4 @@ if (@end(explode('.', $_SERVER['SERVER_NAME'])) == 'dev') {
 define('DOMAIN', "http://{$_SERVER['SERVER_NAME']}");
 define('UP', DOMAIN . "/media/img/");
 define('UPT', DOMAIN . "/media/img/thumbs/");
+define('APP', DOMAIN . "/media/app/");

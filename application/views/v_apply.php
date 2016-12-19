@@ -24,7 +24,7 @@
                 <div class="section-content pt-100">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title text-white">Foreign Principals</h3>
+                            <h3 class="title text-white"><?= $one_vacancy->VacancyTitle; ?> </h3>
                         </div>
                     </div>
                 </div>
@@ -45,39 +45,53 @@
                             </div>
                         </div>
                     </div>
+                    <?php
+                    $notification = $this->session->flashdata('notification');
+                    if (isset($notification)) { ?>
+                    <div class="alert alert-<?= $notification['alert'] ?> alert-dismissable">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button"> * </button>
+                        <?= $notification['text'] ?>
+                    </div>
+                    <?php } ?>
+
                     <div class="row mt-30 text-justify">
                         <div class="col-md-12">
                             <div class="heading-line-bottom">
                                 <h4 class="heading-title">Upload Your Details</h4>
                             </div>
-                            <form action="#">
+                            <form action="" method="post" enctype="multipart/form-data">
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Vacancy Title</label>
-                                        <input class="form-control" type="text" disabled>
+                                        <input class="form-control" value="<?= $one_vacancy->VacancyTitle; ?> " type="text" disabled>
+                                        <input class="form-control" value="<?= $one_vacancy->VacancyId; ?> " type="hidden"  name="form[vid]">
+                                        <input class="form-control" value="<?= $one_vacancy->VacancyTitle; ?> " type="hidden" name="form[vname]">
                                     </div>
-
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Your Name</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="form[UserName]" value="<?= set_value('form[UserName]') ?>">
+                                        <p class="error"><?= form_error('form[UserName]') ?></p>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Your Telephone</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" value="<?= set_value('form[UserTelephone]') ?>" type="text" name="form[UserTelephone]">
+                                        <p class="error"><?= form_error('form[UserTelephone]') ?></p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Your E-mail</label>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="email" name="form[UserEmail]" value="<?= set_value('form[UserEmail]') ?>">
+                                        <p class="error"><?= form_error('form[UserEmail]') ?></p>
                                     </div>
                                     <div class="form-group col-md-6">
-                                        <label>Upload CV *</label>
+                                        <label>Upload CV * </label><small> Valid file types are doc|pdf|odt|docx|zip</small>
                                         <input value="2000000" name="MAX_FILE_SIZE" type="hidden">
 <!--                                        <input class="form-control" id="file" name="file" placeholder="CV" type="file">-->
-                                        <input id="exampleInputFile2" type="file" name="file">
+                                        <input id="exampleInputFile2" type="file" name="userfile" required>
+                                        <p class="error"><?= form_error('userfile') ?></p>
 
                                     </div>
                                 </div>

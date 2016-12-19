@@ -24,7 +24,7 @@
                 <div class="section-content pt-100">
                     <div class="row">
                         <div class="col-md-12">
-                            <h3 class="title text-white">Foreign Principals</h3>
+                            <h3 class="title text-white"><?= $one_vacancy->VacancyTitle; ?>  </h3>
                         </div>
                     </div>
                 </div>
@@ -47,8 +47,8 @@
                                     <li class="col-md-3">
                                         <div class="" style="border: #c0c0c0 solid 1px;border-radius: 3px;padding: 10px 12px;margin-bottom: 2%;">
                                             <p>
-                                                Doha Qatar                                                                    <br>
-                                                <img src="http://amalsulthan.com/image/imagetemp/1426481530.jpg" width="100" height="50">
+                                                <?= $one_vacancy->CountryTitle; ?>                                                                   <br>
+                                                <img src="<?= UP.$one_vacancy->Image ?>" width="100" height="50">
                                             </p>
                                         </div>
                                     </li>
@@ -59,7 +59,7 @@
                                         <div class="" style="border: #c0c0c0 solid 1px;border-radius: 3px;padding: 10px 12px;margin-bottom: 2%;">
                                             <h5 style="color: #000000;">Salary</h5>
 
-                                            <p>1200 QR</p>
+                                            <p> <?= $one_vacancy->Salary; ?></p>
                                         </div>
                                     </li>
 
@@ -67,7 +67,9 @@
                                         <div class="" style="border: #c0c0c0 solid 1px;border-radius: 3px;padding: 10px 12px;margin-bottom: 2%;">
                                             <h5 style="color: #000000;">Food</h5>
 
-                                            <p>Allowance</p>
+                                            <?php foreach ($foods as $food): $food = (object)$food; ?>
+                                                <?= ($one_vacancy->Food == $food->index) ? $food->value : ""; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
 
@@ -76,7 +78,9 @@
                                             <h5 style="color: #000000;">
                                                 Accommodation</h5>
 
-                                            <p>Provided</p>
+                                            <?php foreach ($accommodations as $accommodation): $accommodation = (object)$accommodation; ?>
+                                                <?= ($one_vacancy->Accommodation == $accommodation->index) ? $accommodation->value : ""; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
 
@@ -84,7 +88,9 @@
                                         <div class="" style="border: #c0c0c0 solid 1px;border-radius: 3px;padding: 10px 12px;margin-bottom: 2%;">
                                             <h5 style="color: #000000;">Medical</h5>
 
-                                            <p>Provided</p>
+                                            <?php foreach ($medicals as $medical): $medical = (object)$medical; ?>
+                                                <?= ($one_vacancy->Accommodation == $medical->index) ? $medical->value : ""; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                     <div class="clearfix"></div>
@@ -93,7 +99,9 @@
                                             <h5 style="color: #000000;">Air
                                                 Ticket</h5>
 
-                                            <p>One Way</p>
+                                            <?php foreach ($airTickets as $airTicket): $airTicket = (object)$airTicket; ?>
+                                                <?= ($one_vacancy->AirTicket == $medical->index) ? $medical->value : ""; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                     <li class="col-md-6">
@@ -101,7 +109,9 @@
                                             <h5 style="color: #000000;">Contract
                                                 Period</h5>
 
-                                            <p>2 Years</p>
+                                            <?php foreach ($contractYears as $contractYear): $contractYear = (object)$contractYear; ?>
+                                                <?= ($one_vacancy->ContractYear == $medical->index) ? $medical->value : ""; ?>
+                                            <?php endforeach; ?>
                                         </div>
                                     </li>
                                     <div class="clearfix"></div>
@@ -109,11 +119,7 @@
                                         <div class="" style="border: #c0c0c0 solid 1px;border-radius: 3px;padding: 10px 12px;margin-bottom: 2%;">
                                             <h5 style="color: #000000;">Description</h5>
 
-                                            <p>AGE BELOW 35 WITH ENGLISH KNOWLEDGE / GOOD HYGIENIC AND &nbsp;WITH PRESENTABLE LOOK.
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam corrupti quam veritatis deleniti, suscipit quo
-                                                at porro! Magni modi ipsam eveniet natus architecto corporis tempore debitis dolorum sint soluta magnam,
-                                                necessitatibus eaque velit nostrum id fuga ad, laborum consequuntur voluptatibus nam? Incidunt temporibus o
-                                                bcaecati veritatis facere accusantium provident non quibusdam.</p>
+                                            <p><?= $one_vacancy->Description; ?></p>
                                         </div>
                                     </li>
 
@@ -121,8 +127,8 @@
                                 </ul>
                                 <div style="">
 
-                                    <a href="#" class="btn btn-dark btn-circled btn-sm">Apply Now</a>
-<!--                                    <a href="#" class="btn btn-default">Apply Now</a>-->
+                                    <a href="<?= base_url('Apply-Now/').url_title($one_vacancy->VacancyTitle).'/'.$one_vacancy->VacancyId ?>" class="btn btn-dark btn-circled btn-sm">Apply Now</a>
+                                    <!--<a href="#" class="btn btn-default">Apply Now</a>-->
                                 </div>
 
                             </div>

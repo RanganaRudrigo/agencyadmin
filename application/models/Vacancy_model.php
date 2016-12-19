@@ -10,6 +10,7 @@ class Vacancy_model extends MY_Model
 {
     var $_table = "vacancy",
         $primary_key = "VacancyId";
+//        $soft_delete_key = 'vacancy.IsDeleted';
 
     var $before_create = ['prop_data_before_create'];
     var $before_update = ['prop_data_before_update'];

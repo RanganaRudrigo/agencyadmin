@@ -68,37 +68,37 @@ $route['Apply-Now/(.+)/(.+)'] = 'Vacancies/apply/$2';
 //$route['Recycling'] = 'Home/recycling';
 //$route['Collector-Wanted'] = 'Home/collector_wanted';
 //==================================================================
-$route['Ongoing-Projects'] = 'Onproject/index';
-$route['Ongoing-Projects/(.+)'] = 'Onproject/index/$1';
-
-$route['Completed-Projects'] = 'Comproject/index';
-$route['Completed-Projects/(.+)'] = 'Comproject/index/$1';
-
-$route['Project/(.+)/(.+)'] = 'Onproject/details/$2';
-
-
-$route['Latest-News'] = 'Latestnews/index';
-$route['Latest-News/(.+)'] = 'Latestnews/index/$1';
-$route['News/(.+)/(.+)'] = 'Latestnews/details/$2';
-
-$route['Sri-Lanka-News'] = 'Slnews/index';
-$route['Sri-Lanka-News/(.+)'] = 'Slnews/index/$1';
-$route['SL-News/(.+)/(.+)'] = 'Slnews/details/$2';
-
-$route['Blog'] = 'Blog/index';
-$route['Blog/(.+)'] = 'Blog/index/$1';
-$route['Blog-Detail/(.+)/(.+)'] = 'Blog/details/$2';
-
-$route['Sponsorship'] = 'Sponsorship/index';
-$route['Sponsorship/(.+)'] = 'Sponsorship/index/$1';
-$route['Sponsorship-Detail/(.+)/(.+)'] = 'Sponsorship/details/$2';
-
-$route['Photo-Gallery'] = 'Photogallery/index';
-$route['Photo-Gallery/(.+)'] = 'Photogallery/index/$1';
-$route['Photo-Gallery-Detail/(.+)/(.+)'] = 'Photogallery/details/$2';
-
-$route['Video-Gallery'] = 'Videogallery/index';
-$route['Video-Gallery/(.+)'] = 'Videogallery/index/$1';
+//$route['Ongoing-Projects'] = 'Onproject/index';
+//$route['Ongoing-Projects/(.+)'] = 'Onproject/index/$1';
+//
+//$route['Completed-Projects'] = 'Comproject/index';
+//$route['Completed-Projects/(.+)'] = 'Comproject/index/$1';
+//
+//$route['Project/(.+)/(.+)'] = 'Onproject/details/$2';
+//
+//
+//$route['Latest-News'] = 'Latestnews/index';
+//$route['Latest-News/(.+)'] = 'Latestnews/index/$1';
+//$route['News/(.+)/(.+)'] = 'Latestnews/details/$2';
+//
+//$route['Sri-Lanka-News'] = 'Slnews/index';
+//$route['Sri-Lanka-News/(.+)'] = 'Slnews/index/$1';
+//$route['SL-News/(.+)/(.+)'] = 'Slnews/details/$2';
+//
+//$route['Blog'] = 'Blog/index';
+//$route['Blog/(.+)'] = 'Blog/index/$1';
+//$route['Blog-Detail/(.+)/(.+)'] = 'Blog/details/$2';
+//
+//$route['Sponsorship'] = 'Sponsorship/index';
+//$route['Sponsorship/(.+)'] = 'Sponsorship/index/$1';
+//$route['Sponsorship-Detail/(.+)/(.+)'] = 'Sponsorship/details/$2';
+//
+//$route['Photo-Gallery'] = 'Photogallery/index';
+//$route['Photo-Gallery/(.+)'] = 'Photogallery/index/$1';
+//$route['Photo-Gallery-Detail/(.+)/(.+)'] = 'Photogallery/details/$2';
+//
+//$route['Video-Gallery'] = 'Videogallery/index';
+//$route['Video-Gallery/(.+)'] = 'Videogallery/index/$1';
 
 
 

@@ -32,7 +32,10 @@ class Home extends Front_Controller
 //
 //        $this->load->model('gallery_model','gallery');
 //        $d['galleries'] = $this->gallery->limit(12)->order_by('GalleryId','desc')->get_all();
-//
+
+        $d['vacancies'] = $this->vacancy->join('country')
+            ->fields("{$this->vacancy->table()}.* , country.CountryId,CountryTitle,Image ")->limit(13)->order_by("Order", "ASC")
+            ->get_all();
 //
 //        $this->load->model('winners_model','winner');
 //        $d['winners'] = $this->winner->get_all();
@@ -92,7 +95,6 @@ class Home extends Front_Controller
 
     public function contact_us()
     {
-
         $d['name'] = "";
         $d['email'] = "";
         $d['subject'] = "";

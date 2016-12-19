@@ -80,6 +80,7 @@ class Country extends MY_Controller
             'page' => "$this->page/index",
             'records' => $this->model->get_all()
         ];
+//        p($this->db->last_query());
         $this->_form($d);
     }
 

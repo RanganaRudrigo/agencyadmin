@@ -28,7 +28,7 @@
         <div class="row">
             <div class="col-md-12 col-sm-6">
                 <address>
-                    <a href="">Home</a> | <a href="">About Us</a> | <a href="">Services</a> |  <a href="">Vacancies</a> | <a href="">Our Clients</a> | <a href="">Foreign Princpals</a> | <a href="">Data Bank</a> | <a href="">Tour</a>  |  <a href="">Contact Us</a>
+                    <a href="<?= base_url('Home') ?>">Home</a> | <a href="<?= base_url('About-Us') ?>">About Us</a> | <a href="<?= base_url('Services') ?>">Services</a> |  <a href="<?= base_url('Vacancies') ?>">Vacancies</a> | <a href="<?= base_url('Our-Clients') ?>">Our Clients</a> | <a href="<?= base_url('Foreign-Principals') ?>">Foreign Principals</a> | <a href="<?= base_url('Data-Bank') ?>">Data Bank</a>  |  <a href="<?= base_url('Contact-Us') ?>">Contact Us</a>
                 </address>
             </div>
 
